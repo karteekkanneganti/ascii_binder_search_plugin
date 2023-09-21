@@ -53,7 +53,7 @@ class Indexer(object):
         """ Executes the indexer """
         self.parse_indexer_arguments()
         with open('_distro_map.yml') as distro_map_yml:
-            distro_map = yaml.load(distro_map_yml)
+            distro_map = yaml.safe_load(distro_map_yml)
             for distro in distro_map:
                 site_folder = distro_map[distro]['site']
                 data = defaultdict(list)
